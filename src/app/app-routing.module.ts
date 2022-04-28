@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormComponent } from './form/form.component';
+import { ItempageComponent } from './itempage/itempage.component';
+
 const routes: Routes = [
-  {path:"form",component:FormComponent},
+  
+{path:"itempage",component:ItempageComponent}
 ];
 
 @NgModule({

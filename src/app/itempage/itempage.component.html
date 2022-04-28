@@ -1,0 +1,47 @@
+<div class="col-md-2"></div>
+ <div class="col-md-8">
+    <form [formGroup]="contactform" (ngSubmit)="Submit()">
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" id="name" name="name" formControlName="name" class="form-control">
+<div *ngIf="contactform.controls['name'].invalid && contactform.controls['name'].touched">
+  <span class="error" *ngIf="contactform.controls['name'].errors?.['required']"> name is required</span>
+  <span class="error" *ngIf="contactform.controls['name'].errors?.['minlength']"> name at least have 2 char </span>
+</div>
+        </div>
+        <div class="form-group">
+            <label for="price">price</label>
+            <input type="text" id="price" name="price" formControlName="price" class="form-control">
+            <div *ngIf="contactform.controls['price'].invalid && contactform.controls['price'].touched">
+                <span class="error" *ngIf="contactform.controls['price'].errors?.['required']">price is required</span>
+                <span class="error" *ngIf="contactform.controls['price'].errors?.['minlength']">price at least have 1 number</span>
+              </div>
+        </div>
+       
+        <div class="form-group">
+            <label for="quantity">quantity</label>
+            <input type="quantity" id="quantity" name="quantity" formControlName="quantity" class="form-control">
+            <div *ngIf="contactform.controls['quantity'].invalid && contactform.controls['quantity'].touched">
+                <span class="error" *ngIf="contactform.controls['quantity'].errors?.['required']">quantity is required</span>
+                <span class="error" *ngIf="contactform.controls['quantity'].errors?.['minlength']">quantity at leasthave 1 number</span>
+              </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="discount">discount</label>
+            <input type="discount" id="discount" name="discount" formControlName="discount" class="form-control">
+            <div *ngIf="contactform.controls['discount'].invalid && contactform.controls['discount'].touched">
+                <span class="error" *ngIf="contactform.controls['discount'].errors?.['required']">discount is required</span>
+                <span class="error" *ngIf="contactform.controls['discount'].errors?.['minlength']">discount at leasthave 1 number</span>
+              </div>
+        </div>
+       
+        <div class="form-group">
+            <button type="submit"class="btn btn-success"[disabled]="!contactform.valid">send</button>
+        </div>
+    </form>
+</div>
+<h2>Totalprice:{{totalprice}}</h2>
+
+ <div class="col-md-2"></div>
+

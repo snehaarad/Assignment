@@ -1,0 +1,12 @@
+.inputerror
+{
+    background-color: red;
+    border: 2px solid blue;
+}
+.validcls{
+    background-color: green;
+    border: 0px;
+}
+.center{
+align-content: center;
+}
