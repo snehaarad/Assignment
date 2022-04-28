@@ -1,0 +1,115 @@
+sneha@ubuntu:~$ cat>item.txt
+1 apple  100
+2 tomato 20
+3 banana 60
+4 potato 50
+5 onion  80
+sneha@ubuntu:~$ cat item.txt
+1 apple  100
+2 tomato 20
+3 banana 60
+4 potato 50
+5 onion  80
+sneha@ubuntu:~$ cat>category.txt
+1 fruit
+2 vegitables
+3 fruit
+4 vegitables
+5 vegitables
+
+sneha@ubuntu:~$ join item.txt category.txt >new.txt
+sneha@ubuntu:~$ cat new.txt
+1 apple 100 fruit
+2 tomato 20 vegitables
+3 banana 60 fruit
+4 potato 50 vegitables
+5 onion 80 vegitables
+
+sneha@ubuntu:~$ wc -w new.txt
+20 new.txt
+
+sneha@ubuntu:~$ awk '{print $3}' new.txt |sort -n
+20
+50
+60
+80
+100
+
+sneha@ubuntu:~$ awk ' NR==3 {print  $3}' new.txt 
+60
+
+sneha@ubuntu:~$ awk '{print  $3}' new.txt|sort -n -r |head -n1 
+
+100
+sneha@ubuntu:~$ awk '{print  $3}' new.txt|sort -n -r |tail -n1 
+20
+
+sneha@ubuntu:~$ grep -i 'potato' new.txt
+4 potato vegitables
+
+sneha@ubuntu:~$ grep -v 'potato' new.txt
+1 apple fruit
+2 tomato vegitables
+3 banana fruit
+5 onion vegitables
+
+
+
+
+
+
+
+
+
+
+
+sneha@ubuntu:~$ cat >student.txt
+1 sneha  latur  present
+2 swati  mumbai absent
+3 pooja  pune   present
+4 nikita indore absent
+5 uma    latur  present
+sneha@ubuntu:~$ cat student.txt
+1 sneha  latur  present
+2 swati  mumbai absent
+3 pooja  pune   present
+4 nikita indore absent
+5 uma    latur  present
+sneha@ubuntu:~$ cat >marks.txt
+1  83
+2  0
+3  89
+4  0
+5  85
+sneha@ubuntu:~$ cat marks.txt
+1  83
+2  0
+3  89
+4  0
+5  85
+sneha@ubuntu:~$ join student.txt marks.txt
+1 sneha latur present 83
+2 swati mumbai absent 0
+3 pooja pune present 89
+4 nikita indore absent 0
+5 uma latur present 85
+sneha@ubuntu:~$ grep -c 'pre' student.txt
+3
+sneha@ubuntu:~$ grep -c 'abs' student.txt
+2
+sneha@ubuntu:~$ sort -n -r marks.txt |head -n1
+89
+sneha@ubuntu:~$ sort -n -r marks.txt |tail -n1
+0
+sneha@ubuntu:~$ awk '{print $3,$2}' student.txt
+latur sneha
+mumbai swati
+pune pooja
+indore nikita
+latur uma
+ 
+
+
+
+
+
